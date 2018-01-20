@@ -1,3 +1,4 @@
+package application;
 import java.util.Scanner;
 import java.math.BigInteger;
 
@@ -9,7 +10,7 @@ public class Lab1Ex {
 		int n = -1;
 		while (n != 0)
 		{
-			System.out.print("Выберите нужное действие: \n 1 - Тест простоты Ферма; \n 2 - Функция Эйлера; \n 3 - Алгоритм Полларда; \n 0 - Завершение работы.\n");
+			System.out.print("Выберите нужное действие: \n 1 - Обычный тест простоты; \n 2 - Тест простоты Ферма; \n 3 - Функция Эйлера; \n 4 - Алгоритм Полларда; \n 0 - Завершение работы.\n");
 			n = in.nextInt();
 			switch (n)
 			{
@@ -18,6 +19,18 @@ public class Lab1Ex {
 					break;
 				}
 				case 1:
+				{
+					System.out.println("*Обычный тест простоты*");
+					System.out.println("Введите число: ");
+					BigInteger Num = in.nextBigInteger();
+					EasyTest ET = new EasyTest();
+					if (ET.Execute(Num))			
+						System.out.println("Данное число простое.");
+					else
+						System.out.println("Данное число составное.");
+					System.out.println();
+				} break;
+				case 2:
 				{
 					System.out.println("*Тест простоты Ферма*");
 					System.out.println("Введите число: ");
@@ -29,7 +42,7 @@ public class Lab1Ex {
 						System.out.println("Данное число составное.");
 					System.out.println();
 				} break;
-				case 2:
+				case 3:
 				{
 					System.out.println("*Функция Эйлера*");
 					System.out.println("Введите число: ");
@@ -38,7 +51,7 @@ public class Lab1Ex {
 					System.out.println("Количество чисел взаимно простых с введенным числом и меньших его: " + FE.Execute(Num));				
 					System.out.println();
 				} break;
-				case 3:
+				case 4:
 				{
 					System.out.println("*Алгоритм Полларда*");
 					System.out.println("Введите число: ");
